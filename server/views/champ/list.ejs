@@ -1,0 +1,52 @@
+<%- include ("../partials/header.ejs") %>
+<%- include ("../partials/main_nav.ejs") %>
+
+    
+
+<!-- Main -->
+<main class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-12">
+            <h1><%= title %></h1>
+            <a href="/Champ-list/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add a Champion
+            </a>
+            <br>
+            <br>
+    <table class="table table-bordered table-striped table-hover">
+    <tr class="d-flex"> 
+        <th class="text-center col-1">Name</th>
+        <th class="text-center col-2">Region</th>
+        <th class="text-center col-2">Role</th>
+        <th class="text-center col-3">Title</th>
+        <th class="text-center col-1">Price</th>
+        <th class="text-center col-1"></th>
+        <th class="text-center col-1"></th>
+    </tr>
+    <!-- repeat template -->
+    <% for(let count=0; count < Champlist.length; count++) { %>
+        <tr class="d-flex">
+            <td class="text-center col-1"><%= Champlist[count].Name %></td>
+            <td class="text-center col-2"><%= Champlist[count].Region %></td>
+            <td class="text-center col-2"><%= Champlist[count].Role %></td>
+            <td class="text-center col-3"><%= Champlist[count].Title %></td>
+            <td class="text-center col-1"><%= Champlist[count].Price %></td>
+            <td class="text-center col-1">
+                <a href="/Champ-list/edit/<%= Champlist[count]._id %>"
+                    class="btn btn-primary">
+                    <i class="fas fa-pencil-alt"></i> EDIT </a>
+            </td>
+            <td class="text-center col-1">
+                <a href="/Champ-list/delete/<%= Champlist[count]._id %>"
+                    class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Delete </a>
+            </td>
+        </tr>
+    <% } %>
+    </table>
+</div>    
+</div>
+</main>
+
+<%- include ("../partials/bottom_nav.ejs") %>
+<%- include ("../partials/footer.ejs") %>

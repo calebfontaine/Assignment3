@@ -1,0 +1,63 @@
+<%- include ("../partials/header.ejs") %>
+<%- include ("../partials/main_nav.ejs") %>
+
+
+<!-- content for the add page goes here -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h1><%= title %></h1>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="NameTextField">Name</label>
+                    <input type="text" class="form-control"
+                    id="NameTextField"
+                    placeholder="Enter the name of the champion"
+                    name="Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="RegionTextField">Region</label>
+                    <input type="text" class="form-control"
+                    id="RegionTextField"
+                    placeholder="Enter the region of the champion"
+                    name="Region" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="RoleTextField">Role</label>
+                    <input type="text" class="form-control"
+                    id="RoleTextField"
+                    placeholder="Enter the role of the champion"
+                    name="Role" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="TitleTextField">Title</label>
+                    <textarea type="text" class="form-control"
+                    id="TitleTextField"
+                    placeholder="Enter the title of the champion"
+                    name="Title" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="PriceTextField">Price</label>
+                    <input type="number" class="form-control"
+                    id="PriceTextField"
+                    placeholder="Enter the price of the champion"
+                    name="Price" required>
+                </div>
+                    <br>
+                <button class="btn-btn-primary" type="submit">
+                    <i class="fas fa-edit"></i>Submit</button>
+
+                <a href="/Champ-list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i>Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include ("../partials/bottom_nav.ejs") %>
+<%- include ("../partials/footer.ejs") %>
